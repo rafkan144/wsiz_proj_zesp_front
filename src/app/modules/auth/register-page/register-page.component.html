@@ -1,0 +1,5 @@
+<register-form (onSubmit)="register($event)" [submitting]="submitting" *ngIf="!successfulMessage"></register-form>
+<div class="row" *ngIf="successfulMessage">
+  <span>Udało się założyć konto możesz teraz się zalogować</span>
+  <button class="col-lg-12" routerLink="/auth/login">Logowanie</button>
+</div>

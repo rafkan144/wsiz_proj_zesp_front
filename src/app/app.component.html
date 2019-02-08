@@ -1,0 +1,28 @@
+<div *ngIf="!loading && !errorWhileLoading">
+  <app-header>
+  </app-header>
+
+  <br />
+  <br />
+
+  <main role="main">
+    <div class="container">
+      <section id="content">
+        <div class="container-fluid" FBusy [showBusy]="spinnerService.showSpinner()">
+          <router-outlet></router-outlet>
+        </div>
+      </section>
+    </div>
+  </main>
+
+</div>
+
+<div *ngIf="loading && !errorWhileLoading" FBusy [showBusy]="true">
+</div>
+
+<div *ngIf="errorWhileLoading">
+  <p>
+    Podczas ładowania aplikacji wystąpił błąd.
+    <button label="Przeładuj stronę" class="ui-button-info" (click)="location.reload(true)"></button>
+  </p>
+</div>

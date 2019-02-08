@@ -1,0 +1,33 @@
+<br/>
+<br/>
+<br/>
+<br/>
+
+<form #mainForm="ngForm" (ngSubmit)="onSubmitHandler()">
+
+  <div class="row form-group">
+    <input name="login" type="login" class="form-control" [disabled]="submitting" [(ngModel)]="model.login" placeholder="login"
+      required #login="ngModel" [ngModelOptions]="{ updateOn: 'change' }">
+    <div [hidden]="login.valid || login.pristine" class="alert alert-danger">
+      "Login" jest wymagany
+    </div>
+  </div>
+
+  <div class="row form-group">
+    <input name="password" type="password" class="form-control" [disabled]="submitting" [(ngModel)]="model.password" placeholder="Hasło"
+      required #password="ngModel" [ngModelOptions]="{ updateOn: 'change' }">
+    <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
+      "Hasło" jest wymagane
+    </div>
+  </div>
+
+  <div class="row form-group">
+    <input name="fullName" type="fullName" class="form-control" [disabled]="submitting" [(ngModel)]="model.fullName" placeholder="Nazwa"
+      required #fullName="ngModel" [ngModelOptions]="{ updateOn: 'change' }">
+      <div [hidden]="fullName.valid || fullName.pristine" class="alert alert-danger">
+      "Nazwa" jest wymagana
+    </div>
+  </div>
+
+  <button class="btn btn-success" [disabled]="mainForm.pristine || submitting">Zarejestruj</button>
+</form>

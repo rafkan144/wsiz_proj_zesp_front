@@ -1,0 +1,60 @@
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="post post-thumb">
+          <a class="post-img" routerLink="/home"><img src="../../../assets/img/post-1.jpg" alt=""></a>
+          <div class="post-body">
+            <div class="post-meta">
+              <a class="post-category cat-2" routerLink="/home">JavaScript</a>
+              <span class="post-date">27 styczeń, 2019</span>
+            </div>
+            <h3 class="post-title">
+              <a routerLink="/home">
+                Język JavaScript staje się coraz popularniejszy
+              </a>
+            </h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6" *ngFor="let article of articles">
+        <div class="post post-thumb">
+          <a class="post-img" routerLink="/article/edit/{{article.id}}"><img src="../../../assets/img/post-2.jpg" alt=""></a>
+          <div class="post-body">
+            <div class="post-meta">
+              <a class="post-category cat-3" routerLink="/home">Jquery</a>
+              <span class="post-date">Styczeń 27, 2019</span>
+            </div>
+            <h3 class="post-title"><a routerLink="/article/edit/{{article.id}}">{{article.title}}</a></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5">
+            <div class="footer-widget">
+              <ul class="footer-nav">
+              </ul>
+              <div class="footer-copyright">
+                <span>&copy;
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                  Copyright &copy;<script>
+                    document.write(new Date().getFullYear());
+
+                  </script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i>
+                  by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</div>

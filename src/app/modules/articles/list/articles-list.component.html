@@ -1,0 +1,65 @@
+<br/>
+<br/>
+
+<a class="btn btn-success" [routerLink]="constsService.urls.pages.article.create">Dodaj nowy artykuł</a>
+
+<br/>
+<br/>
+
+<div class="card">
+  <div class="card-header text-center">
+    Artykuły
+  </div>
+  <div class="card-body">
+    <table class="table table-striped table-bordered table-hover">
+      <thead class="thead-inverse">
+        <tr>
+          <th>Id</th>
+          <th>Tytuł</th>
+          <th>Treść</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let article of articles">
+          <td>
+            <a routerLink="/article/edit/{{article.id}}">{{article.id}}</a>
+          </td>
+          <td>{{article.title}}</td>
+          <td>{{article.body}}</td>
+          <td>
+            <a class="btn btn-warning btn-sm" routerLink="/article/edit/{{article.id}}">Edytuj</a>
+            <button class="btn btn-danger btn-sm" title="delete article" (click)="delete(article)">x</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card-footer text-center text-muted">
+    Lista artykułów
+  </div>
+</div>
+
+<br/>
+<hr />
+<br/>
+<span>Szybkie dodawanie</span>
+<br/>
+<br/>
+<div>
+  <form>
+    <div class="row">
+      <div class="col">
+        <input #articleTitle type="text" class="form-control" placeholder="tytuł">
+      </div>
+      <div class="col">
+        <input #articleContent type="text" class="form-control" placeholder="treść">
+      </div>
+      <div class="col">
+        <button class="btn btn-success" (click)="create(articleTitle.value, articleContent.value); articleTitle.value=''; articleContent.value=''">
+          Utwórz
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

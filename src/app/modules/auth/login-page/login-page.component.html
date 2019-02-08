@@ -1,0 +1,5 @@
+<div class="row" *ngIf="loginFailed">
+  <span>Login lub hasło jest nie poprawne, spróbuj ponownie.</span>
+</div>
+
+<login-form [submitting]="submitting" (onSubmit)="onSubmit($event)"></login-form>
