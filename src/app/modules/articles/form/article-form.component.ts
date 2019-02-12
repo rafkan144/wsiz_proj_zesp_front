@@ -1,6 +1,6 @@
 import { Component, Injector, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { CommonService } from '../../../services/common.service';
 import { ConstsService } from '../../../services/consts.service';
@@ -22,6 +22,7 @@ export class ArticleFormComponent extends BaseComponent<App.Models.ArticleVm> im
 
   constructor(injector: Injector,
     dataContextService: ArticleDataContextService,
+    private router: Router,
     private route: ActivatedRoute,
     private commonService: CommonService,
     private constsService: ConstsService) {
@@ -64,6 +65,7 @@ export class ArticleFormComponent extends BaseComponent<App.Models.ArticleVm> im
       if (this.mainForm.valid) {
         saveFunction(this.model).subscribe(x => {
           this.notifySuccessSave();
+          this.router.navigateByUrl('/');
         });
     } else {
       console.error('Walidacja nie przeszła');
