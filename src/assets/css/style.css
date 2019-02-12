@@ -954,11 +954,11 @@ RESPONSIVE
 /*=========================================================
 	RESPONSIVE
 ===========================================================*/
- @media only screen and (max-width: 991px) {
+ /* @media only screen and (max-width: 991px) {
      #nav .nav-menu {
          display: none;
     }
-}
+} */
  @media only screen and (max-width: 767px) {
 	 .page-header h1 {
 		 font-size: 28px;
