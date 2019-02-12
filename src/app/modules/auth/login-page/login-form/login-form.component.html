@@ -6,7 +6,7 @@
 <form #mainForm="ngForm" class="form-horizontal" (ngSubmit)="onSubmitHandler()">
 
   <div class="row form-group">
-    <input name="login" type="login" class="form-control" [disabled]="submitting" [(ngModel)]="model.login" placeholder="login"
+    <input name="login" type="login" class="form-control" [disabled]="submitting" [(ngModel)]="model.login" placeholder="Login"
       required #login="ngModel" [ngModelOptions]="{ updateOn: 'change' }">
     <div [hidden]="login.valid || login.pristine" class="alert alert-danger">
       "E-mail" jest wymagany
